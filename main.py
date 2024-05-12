@@ -37,7 +37,7 @@ def count_letters(text):
   # return dict(sorted(letter_count.items()))
 
   # sort the dict by the value how many occurences of the letter return the sorted dict
-  return dict(sorted(letter_count.items(), key=lambda item: item[1]))
+  return dict(sorted(letter_count.items(), key=lambda item: item[1], reverse=True))
 
 def print_report(text, num_words, num_letters):
   print(text)
