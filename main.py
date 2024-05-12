@@ -1,10 +1,9 @@
 def main():
   book_path = "books/frankenstein.txt"
   text = get_book_text(book_path)
-  print(text)
   num_words = count_words(text)
-  print(f"\nThe number of words contained in the text is: {num_words}\n")
-  print(count_letters(text))
+  num_letters = count_letters(text)
+  print_report(text, num_words, num_letters)
 
 def get_book_text(path):
   with open(path) as f:
@@ -35,6 +34,19 @@ def count_letters(text):
         letter_count[character] = 1
   
   # sort the dictionary by the key or alphabetical return the dictionary
-  return dict(sorted(letter_count.items()))
+  # return dict(sorted(letter_count.items()))
+
+  # sort the dict by the value how many occurences of the letter return the sorted dict
+  return dict(sorted(letter_count.items(), key=lambda item: item[1]))
+
+def print_report(text, num_words, num_letters):
+  print(text)
+  print(f"\n--- Begin report of books/frankenstein.txt ---")
+  print()
+  print(f"The number of words contained in the text is: {num_words}")
+  print()
+  for key, value in num_letters.items():
+    print(f"The '{key}' character was found {value} times")
+  print("--- End report ---")
 
 main()
