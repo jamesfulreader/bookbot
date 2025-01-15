@@ -43,7 +43,7 @@ def print_report(text, num_words, num_letters):
   print(text)
   print(f"\n--- Begin report of books/frankenstein.txt ---")
   print()
-  print(f"The number of words contained in the text is: {num_words}")
+  print(f"The number of words found in the document: {num_words}")
   print()
   for key, value in num_letters.items():
     print(f"The '{key}' character was found {value} times")
